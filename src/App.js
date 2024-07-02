@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
 
 export const ContactUs = () => {
   const form = useRef();
@@ -8,15 +8,15 @@ export const ContactUs = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_9tpfbmr', 'template_4k8if4q', form.current, {
-        publicKey: 'YWR8JKk-N4Yem2paq',
-      })
+      .sendForm('service_9tpfbmr', 'template_4k8if4q', form.current,'OWZ2m0Wn-XRNIF45X')
       .then(
         () => {
           console.log('SUCCESS!');
+          alert("Success")
         },
         (error) => {
           console.log('FAILED...', error.text);
+          alert("error check console")
         },
       );
   };
